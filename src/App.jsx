@@ -13,6 +13,9 @@ import {
     Building2
 } from 'lucide-react';
 
+// 透過 Vite 的 import 機制引入照片，打包時會自動處理路徑與快取
+import photoStella from '../assets/photo_stella.jpg';
+
 // 可折疊的工作經歷卡片元件
 const ExpandableExperienceCard = ({ title, company, period, defaultExpanded = false, isHighlight = false, children }) => {
     const [isOpen, setIsOpen] = useState(defaultExpanded);
@@ -52,31 +55,45 @@ const StellaResume = () => {
     return (
         <div className="min-h-screen bg-[#FAFCFB] text-[#334155] font-sans selection:bg-[#DCE8DE] selection:text-[#364F3B]">
 
-            {/* 頂部簡歷區 (Hero Section) */}
+            {/* ========== START: 頂部簡歷區 (Hero Section) ========== */}
             <header className="bg-white border-b border-[#E9ECE9]">
                 <div className="max-w-4xl mx-auto px-6 sm:px-8 py-16 md:py-20">
-                    <div className="flex flex-col gap-4">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-[#1E293B] tracking-tight mb-2">
-                            巫怡錚 <span className="text-[#57755C] font-medium ml-3 text-3xl md:text-4xl">Stella Wu</span>
-                        </h1>
-                        <p className="text-xl text-[#64748B] font-medium mb-1">
-                            營運統籌 · 專案管理 · 數位行銷與自動化
-                        </p>
+                    {/* 左右並排佈局：左邊文字資訊、右邊個人照片 */}
+                    <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+                        {/* 左側：姓名、職稱與標籤 */}
+                        <div className="flex flex-col gap-4 flex-1">
+                            <h1 className="text-4xl md:text-5xl font-extrabold text-[#1E293B] tracking-tight mb-2">
+                                巫怡錚 <span className="text-[#57755C] font-medium ml-3 text-3xl md:text-4xl">Stella Wu</span>
+                            </h1>
+                            <p className="text-xl text-[#64748B] font-medium mb-1">
+                                營運統籌 · 專案管理 · 數位行銷與自動化
+                            </p>
 
-                        {/* 標籤 */}
-                        <div className="flex flex-wrap items-center gap-3">
-                            <span className="inline-flex items-center gap-1.5 bg-[#F0F5F1] text-[#364F3B] text-sm font-semibold px-4 py-2 rounded-lg border border-[#DCE8DE]">
-                                <Briefcase size={16} />
-                                10+ 年高階主管支援與專案推動經驗
-                            </span>
-                            <span className="inline-flex items-center gap-1.5 bg-[#F0F5F1] text-[#364F3B] text-sm font-semibold px-4 py-2 rounded-lg border border-[#DCE8DE]">
-                                <Building2 size={16} />
-                                具備醫療生技產業經驗與跨國溝通能力
-                            </span>
+                            {/* 標籤 */}
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="inline-flex items-center gap-1.5 bg-[#F0F5F1] text-[#364F3B] text-sm font-semibold px-4 py-2 rounded-lg border border-[#DCE8DE]">
+                                    <Briefcase size={16} />
+                                    10+ 年高階主管支援與專案推動經驗
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 bg-[#F0F5F1] text-[#364F3B] text-sm font-semibold px-4 py-2 rounded-lg border border-[#DCE8DE]">
+                                    <Building2 size={16} />
+                                    具備醫療生技產業經驗與跨國溝通能力
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* 右側：個人照片（圓形裁切、帶邊框與陰影） */}
+                        <div className="shrink-0 overflow-hidden rounded-full border-4 border-[#E9ECE9] shadow-lg" style={{ width: '160px', height: '160px' }}>
+                            <img
+                                src={photoStella}
+                                alt="Stella Wu 巫怡錚"
+                                style={{ width: '160px', height: '160px', objectFit: 'cover', objectPosition: 'top' }}
+                            />
                         </div>
                     </div>
                 </div>
             </header>
+            {/* ========== END: 頂部簡歷區 (Hero Section) ========== */}
 
             <main className="max-w-4xl mx-auto px-6 sm:px-8 py-12 space-y-16">
 
