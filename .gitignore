@@ -1,0 +1,19 @@
+# 一般依賴快取
+node_modules/
+
+# Vite 打包生成的檔案（靜態網站目錄）
+dist/
+dist-ssr/
+
+# 執行日誌
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 編輯器暫存與設定（如 VSCode 或 MacOS 自動產生的檔案）
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.sw?
