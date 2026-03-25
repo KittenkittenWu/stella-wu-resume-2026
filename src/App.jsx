@@ -10,7 +10,7 @@ import {
     ChevronUp,
     ShieldCheck,
     Users,
-    Building2
+    Bot
 } from 'lucide-react';
 
 // 透過 Vite 的 import 機制引入照片，打包時會自動處理路徑與快取
@@ -76,8 +76,8 @@ const StellaResume = () => {
                                     10+ 年高階主管支援與專案推動經驗
                                 </span>
                                 <span className="inline-flex items-center gap-1.5 bg-[#F0F5F1] text-[#364F3B] text-sm font-semibold px-4 py-2 rounded-lg border border-[#DCE8DE]">
-                                    <Building2 size={16} />
-                                    具備醫療生技產業經驗與跨國溝通能力
+                                    <Bot size={16} />
+                                    無工程背景打造 AI 自動化流程
                                 </span>
                             </div>
                         </div>
